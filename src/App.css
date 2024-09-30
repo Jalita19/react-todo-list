@@ -1,38 +1,81 @@
 .App {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  border: .2px solid #0b54f2;
+  border-radius: 4px; 
+}
+
+h1 {
   text-align: center;
+  color: #0b54f2;
+  transition: color 0.3s ease, transform 0.3s ease; /* Transition for color and transform */
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1:hover {
+  color: #f318d9; /* Default color */
+  transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input[type="text"] {
+  margin-right: 10px; /* Space to the right of the input */
+  padding: 8px; /* Padding inside the input */
+  border: 1px solid #0b54f2; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  /* width: 100%; Full width of the flex item */
+  max-width: 200px; /* Maximum width for each input */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+
+
+div {
+  margin: 10px 0;
+  
 }
 
-.App-link {
-  color: #61dafb;
+
+/* CSS */
+button{
+  background-color: #0b54f2;
+  border: 1px solid transparent;
+  border-radius: .75rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: .5rem;
+  padding: .1rem 1.2rem;
+  text-align: center;
+  text-decoration: none #6B7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: .2s;
+  transition-property: background-color,border-color,color,fill,stroke;
+  transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  max-width: 200px;
+  margin: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+button:hover {
+  background-color: #ce196d;
+}
+
+button:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  button {
+    padding: .75rem 1.5rem;
   }
 }

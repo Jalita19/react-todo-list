@@ -1,8 +1,7 @@
 import React, { useReducer, useState } from 'react';
-import './App.css'; // Include your CSS styles
 import { initialState, todoReducer } from './todoReducer'; // Import the reducer
 
-const App = () => {
+const TodoList = () => {
   const [state, dispatch] = useReducer(todoReducer, initialState);
   const [newTodo, setNewTodo] = useState('');
   const [category, setCategory] = useState('');
@@ -21,8 +20,8 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <h1> Jalita's To Do List </h1>
+    <div>
+      <h1>Jalita's To Do List</h1>
       <input
         type="text"
         value={newTodo}
@@ -77,4 +76,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default TodoList;
