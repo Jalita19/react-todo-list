@@ -49,4 +49,31 @@ const TodoList = () => {
               defaultValue={todo.text}
               onBlur={(e) => {
                 dispatch({ type: 'EDIT_TODO', payload: { index, text: e.target.value } });
-             
+              }}
+            />
+          ) : (
+            <span>
+              <input
+                type="checkbox"
+                checked={todo.complete}
+                onChange={() => dispatch({ type: 'TOGGLE_COMPLETE', payload: index })}
+              />
+              {todo.text} - {todo.category} - {todo.priority}
+            </span>
+          )}
+          <button onClick={() => dispatch({ type: 'SET_EDITING', payload: index })}>
+            {todo.editing ? 'Save' : 'Edit'}
+          </button>
+          <button
+            onClick={() => dispatch({ type: 'DELETE_TODO', payload: index })}
+            disabled={!todo.complete}
+          >
+            Delete
+          </button>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default TodoList;
